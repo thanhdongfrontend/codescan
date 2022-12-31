@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  
+   video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(60%);
+  }
+  
+  .countdown {
+    margin: 100px auto;
+    width: 50%;
+    display: flex;
+    gap: 30px;
+    font-family: sans-serif;
+  }
+  
+  .time-section {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .time-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .time-segment {
+    display: block;
+    font-size: 100px;
+    font-weight: 900;
+    width: 100px;
+  }
+  
+  .segment-display {
+    position: relative;
+    height: 100%;
+  }
+  
+  .segment-display__top,
+  .segment-display__bottom {
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    position: relative;
+  }
+  
+  .segment-display__top {
+    line-height: 1.5;
+    color: #eee;
+    background-color: #111;
+  }
+  
+  .segment-display__bottom {
+    line-height: 0;
+    color: #fff;
+    background-color: #333;
+  }
+  
+  .segment-overlay {
+    position: absolute;
+    top: 0;
+    perspective: 400px;
+    height: 100%;
+    width: 100px;
+  }
+  
+  .segment-overlay__top,
+  .segment-overlay__bottom {
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .segment-overlay__top {
+    top: 0;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #111;
+    transform-origin: bottom;
+  }
+  
+  .segment-overlay__bottom {
+    bottom: 0;
+    line-height: 0;
+    color: #eee;
+    background-color: #333;
+    border-top: 2px solid black;
+    transform-origin: top;
+  }
+  
+  .segment-overlay.flip .segment-overlay__top {
+    animation: flip-top 0.8s linear;
+  }
+  
+  .segment-overlay.flip .segment-overlay__bottom {
+    animation: flip-bottom 0.8s linear;
+  }
+  
+  @keyframes flip-top {
+    0% {
+      transform: rotateX(0deg);
+    }
+    50%,
+    100% {
+      transform: rotateX(-90deg);
+    }
+  }
+  
+  @keyframes flip-bottom {
+    0%,
+    50% {
+      transform: rotateX(90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  
+  .animate-character
+  {
+     text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip  2s linear infinite;
+    display: inline-block;
+  }
+  
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+      
+    }
+  }
+  
+  header {
+    font-size: 70px;
+    z-index: 1;
+    margin-top: 150px;
+  }
+  
+  .app-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
